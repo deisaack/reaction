@@ -20,35 +20,36 @@ class App extends React.Component {
     }
     componentWillMount () {
         var url = "http://127.0.0.1:8101/api/bks/?format=json";
+        var url1 = "http://127.0.0.1:8101/api/bks/4/?format=json";
         Request.get(url).then((response) => {
             this.setState({
                 books: response.body
+            });
         });
+        Request.get(url1).then((response) => {
+            this.setState({
+                bk: response.body
+            });
         });
-        console.log("What the heck")
-
     }
 
     render() {
         var books = _.map(this.state.books, (book, i) => {
            return <li key={i}>{book.title}</li>;
         });
+        var bk = this.state.bk;
+        console.log(bk)
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <Header />
-                    </div>
-                </div>
-                <div className="row">
-                    <Report/>
+
+                    {/*<Report/>*/}
                     <hr/>
-                    <Band bands={bands}/>
                 </div>
                 <ul>{books}</ul>
             </div>
         );
     }
 }
- 
+
 render(<App/>, window.document.getElementById("app"));
