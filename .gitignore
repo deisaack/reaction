@@ -168,4 +168,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
-
+*pycache*
+__pycache__/*
+.idea
+.idea/
+.idea/*
