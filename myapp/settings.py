@@ -21,9 +21,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'myapp.library',
+    'myapp.chriss',
+    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -33,6 +36,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_URLS_REGEX = r'^/api/.*$'
 
 ROOT_URLCONF = 'myapp.urls'
 
@@ -82,5 +88,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'dist'),
+    # os.path.join(BASE_DIR, 'static'),
+)
 STATIC_URL = '/static/'
