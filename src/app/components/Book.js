@@ -1,15 +1,9 @@
 import React from "react";
 
-export const Header = (props) => {
+export const Book = (props) => {
     return (
-        <nav className="navbar navbar-default">
-            <div className="container">
-                <div className="navbar-header">
-                    <ul className="nav navbar-nav">
-                        <li> <a href='#'>About</a> <a href="#">Home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div className="col-md-6">
+                <h3 href="#">{props.bk}</h3>
+        </div>
     );
 };

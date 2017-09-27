@@ -7,7 +7,7 @@ SECRET_KEY = '+a6g&lshv_kuj@q#)jb6vdh^y9b(grg6(cdjt1d776twic@7xe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.tirr.com', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
