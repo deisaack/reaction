@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
-    "build:prod": "webpack -d && cp src/index.html dist/index.html"
+    "build": "webpack -d && cp src/index.html myapp/library/templates/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -p && rm myapp/library/templates/index.html && cp src/index.html myapp/library/templates/index.html"
   },
   "keywords": [
     "reactjs"
@@ -15,8 +15,10 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "^2.2.2",
+    "lodash": "^4.17.4",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "superagent": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
