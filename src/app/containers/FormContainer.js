@@ -101,7 +101,8 @@ class FormContainer extends Component {
 	}
 	render() {
 		return (
-			<form className="container" onSubmit={this.handleFormSubmit}>
+			<div>  
+                <form className="container" onSubmit={this.handleFormSubmit}>
 				<h5>Pet Adoption Form</h5>
 				<SingleInput
 					inputType={'text'}
@@ -112,6 +113,7 @@ class FormContainer extends Component {
 					placeholder={'Type first and last name here'} />
 				<Select
 					name={'ageRange'}
+					title={'Age Range'}
 					placeholder={'Choose your age range'}
 					controlFunc={this.handleAgeRangeSelect}
 					options={this.state.ageOptions}
@@ -153,6 +155,8 @@ class FormContainer extends Component {
 					className="btn btn-link float-left"
 					onClick={this.handleClearForm}>Clear form</button>
 			</form>
+                <hr/>
+            </div>
 		);
 	}
 }

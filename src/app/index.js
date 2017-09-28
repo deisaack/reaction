@@ -2,10 +2,8 @@ import React from "react";
 import {render} from "react-dom";
 import Request from "superagent"
 import _ from "lodash"
-import Textarea from "./components/Textarea"
-import Reservation from "./components/Reservation"
-import Select from "./components/Select"
 import FormContainer from './containers/FormContainer';
+import DisbursementForm from './containers/DisbursementForm';
 
 
 class App extends React.Component {
@@ -58,9 +56,12 @@ class App extends React.Component {
                     </thead>
                 </table>
                 <hr/>
+                <DisbursementForm />
+                <hr/>
                 <FormContainer/>
             </div>
         );
     }
 }
+
 render(<App/>, window.document.getElementById("app"));
