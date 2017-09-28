@@ -2,6 +2,8 @@ import React from "react";
 import {render} from "react-dom";
 import Request from "superagent"
 import _ from "lodash"
+import Report from "./components/Report"
+import Form from "./components/Form"
 
 class App extends React.Component {
     constructor () {
@@ -18,15 +20,51 @@ class App extends React.Component {
     }
 
     render() {
-        var disbursements = _.map(this.state.disbursements, (disbursements, i) => {
-           return <li key={i}>{disbursements.member_no}, {disbursements.timestamp}</li>;
+        var disbursements = _.map(this.state.disbursements, (disbursement, i) => {
+            return <tr key={i}>
+                <td>{disbursement.member_no}</td>
+                <td>{disbursement.account_ref_no}</td>
+                <td>{disbursement.disbursment_date}</td>
+                <td>{disbursement.branch}</td>
+                <td>{disbursement.member_name}</td>
+                <td>{disbursement.employer_no}</td>
+                <td>{disbursement.employer_name}</td>
+                <td>{disbursement.member_id_no}</td>
+                <td>{disbursement.product_type}</td>
+                <td>{disbursement.principal_amount}</td>
+            </tr>;
         });
         return (
             <div className="container">
-                <ul>{disbursements}</ul>
+                <h3>Disbursment Report</h3>
+                <table className="table table-bordered table-hover table-sm table-responsive">
+                    <thead className="thead-inverse">
+                    <tr>
+                        <th>Member No:</th>
+                        <th>Account No</th>
+                        <th>Disbursement Date</th>
+                        <th>Branch</th>
+                        <th>Agent Name</th>
+                        <th>Member Name</th>
+                        <th>Employee No</th>
+                        <th>Employee Name</th>
+                        <th>Member Id No</th>
+                        <th>Product Type</th>
+                    </tr>
+                   {disbursements}
+                    </thead>
+                </table>
+                {/*<Report />*/}
+                <Form />
             </div>
         );
     }
 }
  
 render(<App/>, window.document.getElementById("app"));
+
+
+
+
+
+
