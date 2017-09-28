@@ -24,11 +24,12 @@ from rest_framework.permissions import (
 
     )
 
-from myapp.library.models import Book
+from myapp.library.models import Book, Disbursment
 
 from .serializers import (
     BookCreateUpdateSerializer,
     BookListSerializer,
+    DisbursmentListSerializer,
     )
 
 
@@ -51,3 +52,14 @@ class BookListAPIView(ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookListSerializer
     permission_classes = [AllowAny]
+
+class DisbursmentListAPIView(ListAPIView):
+    queryset = Disbursment.objects.all()
+    serializer_class = DisbursmentListSerializer
+    permission_classes = [AllowAny]
+
+class DisbursmentDetailAPIView(RetrieveAPIView):
+    queryset = Disbursment.objects.all()
+    serializer_class = DisbursmentListSerializer
+    permission_classes = [AllowAny]
+

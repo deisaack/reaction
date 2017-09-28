@@ -3,7 +3,7 @@ from rest_framework.serializers import (
     ModelSerializer,
     SerializerMethodField
     )
-from myapp.library.models import Book
+from myapp.library.models import Book, Disbursment
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -44,3 +44,8 @@ class BookListSerializer(ModelSerializer):
             'author',
             'user',
         ]
+
+class DisbursmentListSerializer(ModelSerializer):
+    class Meta:
+        model = Disbursment
+        fields = '__all__'
