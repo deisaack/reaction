@@ -12,7 +12,7 @@ export default class NameForm extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({value: event.target.value.toUpperCase()});
     }
 
     handleSubmit(event) {
@@ -26,8 +26,11 @@ export default class NameForm extends React.Component {
                 <label>
                     Name:
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
+                </label> <br/>
+                {this.state.value}
+
+                <br/>
+                <input type="submit" className="btn btn-warning" value="Submit" />
             </form>
         );
     }
