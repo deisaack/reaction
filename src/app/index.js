@@ -19,19 +19,17 @@ class App extends React.Component {
         this.state = {};
     }
     componentWillMount () {
-        var url = "http://127.0.0.1:8101/api/bks/?format=json";
+        var url = "http://127.0.0.1:8101/api/bks/disbursment/?format=json";
         Request.get(url).then((response) => {
             this.setState({
-                books: response.body
+                disbursements: response.body
         });
         });
-        console.log("What the heck")
-
     }
 
     render() {
-        var books = _.map(this.state.books, (book, i) => {
-           return <li key={i}>{book.title}</li>;
+        var disbursements = _.map(this.state.disbursements, (disbursements, i) => {
+           return <li key={i}>{disbursements.title}</li>;
         });
         return (
             <div className="container">
