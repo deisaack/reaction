@@ -58,7 +58,6 @@ class App extends React.Component {
                 <hr/>
                 <DisbursementForm />
                 <hr/>
-                <FormContainer/>
             </div>
         );
     }

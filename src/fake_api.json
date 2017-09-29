@@ -1,0 +1,14 @@
+{
+  "memberNo": "Kisiero",
+  "accountRefNo": "RTU728",
+  "disbursmentDate": "2012-11-10",
+  "branch": "Kakamega",
+  "memberName": "Allan",
+  "employerNo": "MBR234",
+  "employerName": "Mr. Employer",
+  "memberIdNo": 56520,
+  "productType": "Shedd",
+  "productTypeOptions": ["Asset", "Liability", "Capital", "Stock"],
+  "branchOptions": ["Kitale", "Kabianga", "Lesos", "Baringo"],
+  "principalAmount": 0
+}
