@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container %}
+<h3>Disbursment Report</h3>
+<table class="table table-bordered table-hover table-sm table-responsive">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Member No:</th>
+        <th>Account No</th>
+        <th>Disbursement Date</th>
+        <th>Branch</th>
+        <th>Agent Name</th>
+        <th>Member Name</th>
+        <th>Employee No</th>
+        <th>Employee Name</th>
+        <th>Member Id No</th>
+        <th>Product Type</th>
+    </tr>
+    </thead>
+    {% for product in product_list %}
+        <tr>
+            <td>{{ product.member.no }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product.member }}</td>
+            <td>{{ product }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<hr/>
+{% endblock container %}

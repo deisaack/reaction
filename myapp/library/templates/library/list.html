@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <h2>{{ title }}</h2>
+    <ul style="list-style: none;">
+    {% for object in object_list %}
+        <li>{{ forloop.counter }}:
+            {{ object }}
+            <a href="{{ object.get_absolute_url }}">View</a>
+            <a href="{{ object.get_edit_url }}">Edit</a>
+            <a href="{{ object.get_delete_url }}">Delete</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+{% endblock container %}

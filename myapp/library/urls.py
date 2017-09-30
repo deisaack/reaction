@@ -1,0 +1,30 @@
+from django.conf.urls import include, url
+from . import views
+
+urlpatterns = [
+    url(r'agent/$', views.AgentListView.as_view(), name='agent_list'),
+    url(r'agent/create/$', views.AgentCreateView.as_view(), name='agent_create'),
+    url(r'agent/(?P<pk>\d+)/$', views.AgentDetailView.as_view(), name='agent_detail'),
+    url(r'agent/(?P<pk>\d+)/edit/$', views.AgentUpdateView.as_view(), name='agent_update'),
+    url(r'agent/(?P<pk>\d+)/delete/$', views.AgentDeleteView.as_view(), name='agent_delete'),
+    url(r'branch/$', views.BranchListView.as_view(), name='branch_list'),
+    url(r'branch/create/$', views.BranchCreateView.as_view(), name='branch_create'),
+    url(r'branch/(?P<pk>\d+)/$', views.BranchDetailView.as_view(), name='branch_detail'),
+    url(r'branch/(?P<pk>\d+)/edit/$', views.BranchUpdateView.as_view(), name='branch_update'),
+    url(r'branch/(?P<pk>\d+)/delete/$', views.BranchDeleteView.as_view(), name='branch_delete'),
+    url(r'employer/$', views.EmployerListView.as_view(), name='employer_list'),
+    url(r'employer/create/$', views.EmployerCreateView.as_view(), name='employer_create'),
+    url(r'employer/(?P<pk>\d+)/$', views.EmployerDetailView.as_view(), name='employer_detail'),
+    url(r'employer/(?P<pk>\d+)/edit/$', views.EmployerUpdateView.as_view(), name='employer_edit'),
+    url(r'employer/(?P<pk>\d+)/delete/$', views.EmployerDeleteView.as_view(), name='employer_delete'),
+    url(r'member/$', views.MemberListView.as_view(), name='member_list'),
+    url(r'member/create/$', views.MemberCreateView.as_view(), name='member_create'),
+    url(r'member/(?P<pk>\d+)/$', views.MemberDetailView.as_view(), name='member_detail'),
+    url(r'member/(?P<pk>\d+)/edit/$', views.MemberUpdateView.as_view(), name='member_update'),
+    url(r'member/(?P<pk>\d+)/delete/$', views.MemberDeleteView.as_view(), name='member_delete'),
+    url(r'product/$', views.ProductListView.as_view(), name='product_list'),
+    url(r'product/create/$', views.ProductCreateView.as_view(), name='product_create'),
+    url(r'product/(?P<pk>\d+)/$', views.ProductDetailView.as_view(), name='product_detail'),
+    url(r'product/(?P<pk>\d+)/edit/$', views.ProductUpdateView.as_view(), name='product_update'),
+    url(r'product/(?P<pk>\d+)/delete/$', views.ProductDeleteView.as_view(), name='product_delete'),
+]

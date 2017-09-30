@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <ul style="list-style: none">
+    {% for agent in object_list %}
+        <li>{{ forloop.counter }}: {{ agent }}</li>
+    {% endfor %}
+    </ul>
+
+
+{% endblock container %}
+
