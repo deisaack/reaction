@@ -35,5 +35,3 @@ class Disbursment(models.Model):
 
     def __str__(self):
         return self.member_name
-
-

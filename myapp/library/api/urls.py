@@ -5,13 +5,15 @@ from .views import (
     BookCreateAPIView,
     BookDetailAPIView,
     BookListAPIView,
+    DisbursementCreateAPIView,
     DisbursmentListAPIView,
     DisbursmentDetailAPIView,
     )
 
 urlpatterns = [
     url(r'^$', BookListAPIView.as_view(), name='list'),
-    url(r'^disbursment/$', DisbursmentListAPIView.as_view(), name='disbursment_list'),
+    url(r'^disbursement/$', DisbursmentListAPIView.as_view(), name='disbursement_list'),
+    url(r'^disbursement/create/$', DisbursementCreateAPIView.as_view(), name='disbursement_create'),
     url(r'^create/$', BookCreateAPIView.as_view(), name='create'),
     url(r'^book/(?P<pk>[\w-]+)/$', BookDetailAPIView.as_view(), name='detail'),
     url(r'^disbursment/(?P<pk>[\w-]+)/$', DisbursmentDetailAPIView.as_view(), name='disbursment_detail'),

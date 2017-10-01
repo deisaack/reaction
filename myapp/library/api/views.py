@@ -1,6 +1,4 @@
 from django.db.models import Q
-
-
 from rest_framework.filters import (
         SearchFilter,
         OrderingFilter,
@@ -63,3 +61,7 @@ class DisbursmentDetailAPIView(RetrieveAPIView):
     serializer_class = DisbursmentListSerializer
     permission_classes = [AllowAny]
 
+class DisbursementCreateAPIView(CreateAPIView):
+    queryset = Disbursment.objects.all()
+    serializer_class = DisbursmentListSerializer
+    permission_classes = [AllowAny]
