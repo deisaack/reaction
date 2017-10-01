@@ -11,8 +11,8 @@
         <th>Branch</th>
         <th>Agent Name</th>
         <th>Member Name</th>
-        <th>Employee No</th>
-        <th>Employee Name</th>
+        <th>Employeer No</th>
+        <th>Employeer Name</th>
         <th>Member Id No</th>
         <th>Product Type</th>
     </tr>
@@ -20,14 +20,14 @@
     {% for product in product_list %}
         <tr>
             <td>{{ product.member.no }}</td>
+            <td>{{ product.member.account_no }}</td>
+            <td>{{ product.disbursement_date }}</td>
+            <td>{{ product.member.branch }}</td>
             <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
-            <td>{{ product.member }}</td>
+            <td>{{ product.member.agent }}</td>
+            <td>{{ product.member.employer.code }}</td>
+            <td>{{ product.member.employer }}</td>
+            <td>{{ product.member.id_no }}</td>
             <td>{{ product }}</td>
         </tr>
     {% endfor %}

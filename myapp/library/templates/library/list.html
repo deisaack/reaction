@@ -2,7 +2,7 @@
 
 {% block container %}
     <h2>{{ title }}</h2>
-    <ul style="list-style: none;">
+<a href="{{ request.path }}create/">Add {{ title }}</a>    <ul style="list-style: none;">
     {% for object in object_list %}
         <li>{{ forloop.counter }}:
             {{ object }}

@@ -7,7 +7,7 @@ class MyView(TemplateView):
     template_name = 'index.html'
 
 urlpatterns = [
-    # url(r'api/bks/', include('myapp.library.api.urls', namespace='book_api')),
+    url(r'api/lib/', include('myapp.library.api.urls', namespace='lib_api')),
     url(r'lib/', include('myapp.library.urls', namespace='lib')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^app/$', csrf_exempt(MyView.as_view())),
